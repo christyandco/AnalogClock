@@ -17,14 +17,6 @@ void rgb_mixer_create_ui(void)
 	lv_label_set_text(heading,"Analog Clock");
 	lv_obj_align(heading,LV_ALIGN_TOP_MID,0,30);
 
-	meter = lv_meter_create(lv_scr_act());
-	lv_obj_set_size(meter, 150, 150);
-	lv_obj_center(meter);
-
-	lv_meter_scale_t * scale_hour = lv_meter_add_scale(meter);
-	lv_meter_set_scale_ticks(meter, scale_hour, 12, 0, 0, lv_palette_main(LV_PALETTE_GREY));               /*12 ticks*/
-	lv_meter_set_scale_major_ticks(meter, scale_hour, 1, 2, 10, lv_color_black(), 10);    /*Every tick is major*/
-	lv_meter_set_scale_range(meter, scale_hour, 1, 12, 330, 300);       /*[1..12] values in an almost full circle*/
 
 	//canvas part
     /*lv_draw_rect_dsc_t rect_dsc;
@@ -50,7 +42,7 @@ void rgb_mixer_create_ui(void)
 
 
 	//circle part
-	/*static lv_style_t style;
+	static lv_style_t style;
 	lv_style_init(&style);
 	lv_style_set_arc_color(&style, lv_color_black());
 	lv_style_set_arc_width(&style, 4);
@@ -62,7 +54,7 @@ void rgb_mixer_create_ui(void)
 	lv_arc_set_value(arc, 0);
 	lv_obj_remove_style(arc, NULL, LV_PART_KNOB);
 	lv_obj_clear_flag(arc, LV_OBJ_FLAG_CLICKABLE);
-	lv_obj_add_style(arc, &style, 0);*/
+	lv_obj_add_style(arc, &style, 0);
 
 }
 
